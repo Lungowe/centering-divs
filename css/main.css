@@ -96,7 +96,8 @@ textarea {
    ========================================================================== */
 
 html {
-  background-color: #fff;
+  background-color: #524a4e;
+  color: #fdeff4;
   height: 100%;
 }
 
@@ -107,26 +108,58 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  font-weight: 700;
+/** Header Styles **/
+h1 {
+  font-size: 1.7em;
+  margin: 0.67em 0 1em;
+  font-family: "lora", sans-serif;
+}
+
+/** About Styles **/
+.about__me {
+  line-height: 1.5;
+  padding-bottom: 1.5em;
+  border-bottom: 1.5px solid #fdeff4;
+}
+
+.about__me p,
+.about__content p {
+  margin: 0;
+}
+
+.bold {
+  font-weight: 600;
+  font-family: "Lora", sans-serif;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 1em;
+  margin-top: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #fdeff4;
+}
+
+.div-1,
+.div-2 {
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #aaa492;
+}
+
+/** Footer Styles **/
+.footer__wrapper {
+  margin: 1.5em 0;
   display: flex;
   justify-content: space-between;
 }
 
-.div-1,
-.div-2,
-.div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: #f16059;
-  height: 300px;
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.footer__wrapper a {
+  color: #fdeff4;
+}
+
+.footer__wrapper a:hover {
+  color: #ffc0d3;
 }
 
 /* ==========================================================================
@@ -208,6 +241,93 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+@media only screen and (min-width: 500px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .about__me,
+  .about__content {
+    line-height: 1.4;
+    font-size: 1.1em;
+  }
+
+  .footer__wrapper {
+    justify-content: flex-start;
+  }
+
+  .footer__wrapper a:nth-child(2),
+  .footer__wrapper a:nth-child(3) {
+    margin-left: 1em;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .about__content {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .about__me,
+  .about__content {
+    line-height: 1.2;
+  }
+
+  .about__me {
+    font-size: 1.3em;
+  }
+
+  .about__content {
+    /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+    column-gap: 1em;
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 806px) {
+  .div-1,
+  .div-2 {
+    border-right: 1px solid #aaa492;
+    border-bottom: none;
+    padding-right: 0.7em;
+  }
+}
+
+@media only screen and (min-width: 1182px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .about__me {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  h1 {
+    font-size: 2.9em;
+  }
+
+  .about__me {
+    font-size: 1.65em;
+  }
+
+  .about__content {
+    column-gap: 2.7em;
+  }
+
+  .div-1,
+  .div-2,
+  .div-3 {
+    padding-right: 1.5em;
+  }
+}
 
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
